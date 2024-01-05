@@ -6,6 +6,12 @@
     - npx tailwindcss init
     - Configure your template paths (tailwind.config.js)
     - Add the Tailwind directives to your CSS (index.css)
+- Routing
+- Header
+- Login form 
+    - Sign In form
+    - Sign Up form
+    - Validation
 
 # Features
 -  Login/SignUp page
