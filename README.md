@@ -11,7 +11,7 @@
 - Login form 
     - Sign In form
     - Sign Up form
-    - Validation
+    - Form validation
 
 # Features
 -  Login/SignUp page

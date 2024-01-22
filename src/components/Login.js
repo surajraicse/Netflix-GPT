@@ -3,6 +3,9 @@ import Header from './Header';
 import { BGIMG } from '../constants/imageURI';
 import { validateInput } from '../utils/validation';
 import { inputType } from '../constants/validationType';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../store/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [ isSignInPage, setIsSignInPage] = useState(true);
@@ -12,6 +15,9 @@ const Login = () => {
     const [ errorInName, setErrorInName ] = useState(null);
     const [ errorInEmail, setErrorInEmail ] = useState(null);
     const [ errorInPassword, setErrorInPassword ] = useState(null);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const toggleSignInForm = ()=>{
         setIsSignInPage(!isSignInPage);
@@ -56,7 +62,11 @@ const Login = () => {
         if(errorInInput){
             console.log('Error');
         }else{
-            console.log('No Error');
+            dispatch( addUser({
+                userName: userName,
+                userEmail: userEmail,
+            }) );
+            navigate('/browse');
         }
     };
     return (
